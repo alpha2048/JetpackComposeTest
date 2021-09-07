@@ -116,7 +116,6 @@ fun HomePage(
                                 }
                                 if (!uiState.isComplete) {
                                     item {
-
                                         Box(modifier = Modifier.fillMaxWidth()
                                             .padding(8.dp)
                                             .wrapContentSize(Alignment.Center)) {
@@ -127,9 +126,7 @@ fun HomePage(
                             }
 
                             listState.OnBottomReached {
-                                if (!uiState.isComplete) {
-                                    loadMore()
-                                }
+                                loadMore()
                             }
                         } else {
                             EmptyLayout()

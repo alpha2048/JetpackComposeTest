@@ -55,7 +55,8 @@ class HomePageViewModel @Inject constructor(
                         it.copy(
                             state = UiState.Loaded,
                             items = it.items + result.data.items,
-                            isComplete = result.data.items.isEmpty()
+                            // 呼びすぎると403になるので3ページで止める
+                            isComplete = result.data.items.isEmpty() || page >= 3
                         )
                     }
                 }
@@ -72,9 +73,7 @@ class HomePageViewModel @Inject constructor(
         if (fetchJob?.isActive == true) {
             return
         }
-
-        // 呼びすぎると403になるので3ページで止める
-        if (page == 3) {
+        if (uiState.value.isComplete) {
             return
         }
 
