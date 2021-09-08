@@ -1,7 +1,6 @@
 package com.alpha2048.jetpackcomposetest.presentation.ui.page
 
 import android.content.res.Configuration
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -15,7 +14,6 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alpha2048.jetpackcomposetest.domain.entity.OwnerEntity
-import com.alpha2048.jetpackcomposetest.domain.entity.SearchRepositoryEntity
 import com.alpha2048.jetpackcomposetest.domain.entity.RepositoryEntity
 import com.alpha2048.jetpackcomposetest.presentation.ui.component.EmptyLayout
 import com.alpha2048.jetpackcomposetest.presentation.ui.component.ErrorLayout
@@ -53,14 +51,11 @@ fun HomePage(
     loadMore: () -> Unit,
     navigateToRepositoryDetail: (RepositoryEntity) -> Unit,
 ) {
-    val scaffoldState = rememberScaffoldState()
-
     var text by remember {
         mutableStateOf(HomePageViewModel.INITIAL_WORD)
     }
 
     Scaffold(
-        scaffoldState = scaffoldState,
         topBar = {
             TopAppBar(
                 title = {
@@ -116,7 +111,8 @@ fun HomePage(
                                 }
                                 if (!uiState.isComplete) {
                                     item {
-                                        Box(modifier = Modifier.fillMaxWidth()
+                                        Box(modifier = Modifier
+                                            .fillMaxWidth()
                                             .padding(8.dp)
                                             .wrapContentSize(Alignment.Center)) {
                                             CircularProgressIndicator()

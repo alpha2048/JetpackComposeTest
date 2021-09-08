@@ -4,8 +4,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.alpha2048.jetpackcomposetest.domain.entity.RepositoryEntity
 import com.alpha2048.jetpackcomposetest.presentation.ui.page.HomePage
 import com.alpha2048.jetpackcomposetest.presentation.viewmodel.HomePageViewModel
-import androidx.compose.material.ScaffoldState
-import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
@@ -26,7 +24,6 @@ object MainDestinations {
 @Composable
 fun MyNavHost(
     navController: NavHostController = rememberNavController(),
-    scaffoldState: ScaffoldState = rememberScaffoldState(),
     startDestination: String = MainDestinations.HOME_ROUTE
 ) {
     val actions = remember(navController) { MainActions(navController) }
