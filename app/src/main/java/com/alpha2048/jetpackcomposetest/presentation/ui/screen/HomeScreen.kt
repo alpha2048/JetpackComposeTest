@@ -71,6 +71,9 @@ fun HomeScreen(
                                     contentDescription = "Search Icon"
                                 )
                             },
+                            label = {
+                                Text(text = "検索ワードを入れてね")
+                            },
                             value = text,
                             onValueChange = {
                                 text = it
@@ -78,6 +81,7 @@ fun HomeScreen(
                             maxLines = 1,
                             singleLine = true,
                         )
+                        Spacer(modifier = Modifier.width(8.dp))
                         Button(onClick = { onSearch(text) }) {
                             Text(text = "決定")
                         }
