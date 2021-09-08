@@ -1,4 +1,4 @@
-package com.alpha2048.jetpackcomposetest.presentation.ui.page
+package com.alpha2048.jetpackcomposetest.presentation.ui.screen
 
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -11,7 +11,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.alpha2048.jetpackcomposetest.domain.entity.RepositoryEntity
 
 @Composable
-fun RepositoryDetailPage(
+fun RepositoryDetailScreen(
     repository: RepositoryEntity,
     onBackPress: () -> Unit,
 ) {

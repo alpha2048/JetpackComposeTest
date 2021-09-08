@@ -2,8 +2,8 @@ package com.alpha2048.jetpackcomposetest.presentation.ui.navhost
 
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.alpha2048.jetpackcomposetest.domain.entity.RepositoryEntity
-import com.alpha2048.jetpackcomposetest.presentation.ui.page.HomePage
-import com.alpha2048.jetpackcomposetest.presentation.viewmodel.HomePageViewModel
+import com.alpha2048.jetpackcomposetest.presentation.ui.screen.HomeScreen
+import com.alpha2048.jetpackcomposetest.presentation.viewmodel.HomeScreenViewModel
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
@@ -12,7 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
-import com.alpha2048.jetpackcomposetest.presentation.ui.page.RepositoryDetailPage
+import com.alpha2048.jetpackcomposetest.presentation.ui.screen.RepositoryDetailScreen
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
@@ -33,8 +33,8 @@ fun MyNavHost(
         startDestination = startDestination
     ) {
         composable(MainDestinations.HOME_ROUTE) {
-            val viewModel = hiltViewModel<HomePageViewModel>()
-            HomePage(
+            val viewModel = hiltViewModel<HomeScreenViewModel>()
+            HomeScreen(
                 viewModel = viewModel,
                 navigateToRepositoryDetail = actions.navigateToRepositoryDetail,
             )
@@ -45,7 +45,7 @@ fun MyNavHost(
         ) { backStackEntry ->
             backStackEntry.arguments?.getString("repository")?.let { repositoryJson ->
                 Moshi.Builder().add(KotlinJsonAdapterFactory()).build().adapter(RepositoryEntity::class.java).fromJson(repositoryJson)?.let {
-                    RepositoryDetailPage(repository = it, onBackPress = actions.upPress)
+                    RepositoryDetailScreen(repository = it, onBackPress = actions.upPress)
                 }
             }
         }

@@ -1,4 +1,4 @@
-package com.alpha2048.jetpackcomposetest.presentation.ui.page
+package com.alpha2048.jetpackcomposetest.presentation.ui.screen
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
@@ -21,18 +21,18 @@ import com.alpha2048.jetpackcomposetest.presentation.ui.component.LoadingLayout
 import com.alpha2048.jetpackcomposetest.presentation.ui.component.RepositoryCard
 import com.alpha2048.jetpackcomposetest.presentation.ui.thema.MyThema
 import com.alpha2048.jetpackcomposetest.presentation.ui.util.OnBottomReached
-import com.alpha2048.jetpackcomposetest.presentation.viewmodel.HomePageViewModel
+import com.alpha2048.jetpackcomposetest.presentation.viewmodel.HomeScreenViewModel
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
 @Composable
-fun HomePage(
-    viewModel: HomePageViewModel,
+fun HomeScreen(
+    viewModel: HomeScreenViewModel,
     navigateToRepositoryDetail: (RepositoryEntity) -> Unit,
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
-    HomePage(
+    HomeScreen(
         uiState = uiState,
         onRefresh = { viewModel.reload() },
         onSearch = { searchWord ->
@@ -44,15 +44,15 @@ fun HomePage(
 }
 
 @Composable
-fun HomePage(
-    uiState: HomePageViewModel.HomeUiState,
+fun HomeScreen(
+    uiState: HomeScreenViewModel.HomeUiState,
     onRefresh: () -> Unit,
     onSearch: (String) -> Unit,
     loadMore: () -> Unit,
     navigateToRepositoryDetail: (RepositoryEntity) -> Unit,
 ) {
     var text by remember {
-        mutableStateOf(HomePageViewModel.INITIAL_WORD)
+        mutableStateOf(HomeScreenViewModel.INITIAL_WORD)
     }
 
     Scaffold(
@@ -87,12 +87,12 @@ fun HomePage(
         },
     ) {
         when (uiState.state) {
-            is HomePageViewModel.UiState.Loading -> {
+            is HomeScreenViewModel.UiState.Loading -> {
                 LoadingLayout()
             }
-            is HomePageViewModel.UiState.Loaded -> {
+            is HomeScreenViewModel.UiState.Loaded -> {
                 SwipeRefresh(
-                    state = rememberSwipeRefreshState(uiState.state == HomePageViewModel.UiState.Loading),
+                    state = rememberSwipeRefreshState(uiState.state == HomeScreenViewModel.UiState.Loading),
                     onRefresh = onRefresh,
                     content = {
                         if (uiState.items.isNotEmpty()) {
@@ -129,7 +129,7 @@ fun HomePage(
                     },
                 )
             }
-            is HomePageViewModel.UiState.Error -> {
+            is HomeScreenViewModel.UiState.Error -> {
                 ErrorLayout(e = uiState.state.e, onClickRetry = onRefresh)
             }
         }
@@ -141,7 +141,7 @@ fun HomePage(
 @Preview("Home screen (big font)", fontScale = 1.5f)
 @Preview("Home screen (large screen)", device = Devices.PIXEL_C)
 @Composable
-fun PreviewHomePage() {
+fun PreviewHomeScreen() {
     val items = listOf(
         RepositoryEntity(
             id = 1,
@@ -166,8 +166,8 @@ fun PreviewHomePage() {
     )
 
     MyThema {
-        HomePage(
-            uiState = HomePageViewModel.HomeUiState(items = items, state = HomePageViewModel.UiState.Loaded),
+        HomeScreen(
+            uiState = HomeScreenViewModel.HomeUiState(items = items, state = HomeScreenViewModel.UiState.Loaded),
             onRefresh = { },
             onSearch = { },
             loadMore = {},
