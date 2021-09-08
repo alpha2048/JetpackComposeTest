@@ -60,29 +60,28 @@ fun HomePage(
             TopAppBar(
                 title = {
                     // SearchBar
-                    Column {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            TextField(
-                                modifier = Modifier.weight(weight= 1f),
-                                leadingIcon = {
-                                    Icon(Icons.Default.Search, contentDescription = "")
-                                },
-                                value = text,
-                                onValueChange = {
-                                    text = it
-                                },
-                                maxLines = 1,
-                                singleLine = true,
-                            )
-                            Button(onClick = { onSearch(text) }) {
-                                Text(text = "決定")
-                            }
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        TextField(
+                            modifier = Modifier.weight(weight = 1f),
+                            leadingIcon = {
+                                Icon(
+                                    imageVector = Icons.Filled.Search,
+                                    contentDescription = "Search Icon"
+                                )
+                            },
+                            value = text,
+                            onValueChange = {
+                                text = it
+                            },
+                            maxLines = 1,
+                            singleLine = true,
+                        )
+                        Button(onClick = { onSearch(text) }) {
+                            Text(text = "決定")
                         }
                     }
-                    
-                    
                 },
             )
         },
