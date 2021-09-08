@@ -1,5 +1,7 @@
 # JetpackComposeTest
 
+## About
+
 This includes
 
 - Jetpack Compose
@@ -8,6 +10,6 @@ This includes
 - Hilt
 - Coil
 
-# description
+## description
 
 [【Android】Jetpack ComposeでGithubのリポジトリ検索アプリを作ってみる](https://qiita.com/alpha2048/items/fe2c044a5dcfd3a11c46)
