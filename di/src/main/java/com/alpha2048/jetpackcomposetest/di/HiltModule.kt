@@ -27,13 +27,13 @@ abstract class AppModule {
 
     @Singleton
     @Binds
-    abstract fun bindSearchRepository(searchRepositoryImpl: SearchRepositoryImpl): SearchRepository
+    abstract fun bindSearchRepository(searchRepositoryImpl: SearchRepositoryImpl): com.alpha2048.jetpackcomposetest.domain.repository.SearchRepository
 
     // ----------------- usecase -----------------
 
     @Singleton
     @Binds
-    abstract fun bindGetRepositoryUseCase(getRepositoryUseCaseImpl: SearchRepositoryUseCaseImpl): SearchRepositoryUseCase
+    abstract fun bindGetRepositoryUseCase(getRepositoryUseCaseImpl: com.alpha2048.jetpackcomposetest.domain.usecase.SearchRepositoryUseCaseImpl): SearchRepositoryUseCase
 }
 
 @Module

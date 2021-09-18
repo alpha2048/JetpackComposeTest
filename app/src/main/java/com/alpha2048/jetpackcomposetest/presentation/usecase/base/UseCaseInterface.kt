@@ -1,4 +1,4 @@
-package com.alpha2048.jetpackcomposetest.domain.usecase.base
+package com.alpha2048.jetpackcomposetest.presentation.usecase.base
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

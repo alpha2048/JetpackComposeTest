@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.alpha2048.jetpackcomposetest.domain.entity.OwnerEntity
-import com.alpha2048.jetpackcomposetest.domain.entity.RepositoryEntity
+import com.alpha2048.jetpackcomposetest.entity.OwnerEntity
+import com.alpha2048.jetpackcomposetest.entity.RepositoryEntity
 import com.alpha2048.jetpackcomposetest.presentation.ui.component.EmptyLayout
 import com.alpha2048.jetpackcomposetest.presentation.ui.component.ErrorLayout
 import com.alpha2048.jetpackcomposetest.presentation.ui.component.LoadingLayout

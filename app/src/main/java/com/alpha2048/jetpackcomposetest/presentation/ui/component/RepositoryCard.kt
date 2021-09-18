@@ -15,8 +15,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
-import com.alpha2048.jetpackcomposetest.domain.entity.OwnerEntity
-import com.alpha2048.jetpackcomposetest.domain.entity.RepositoryEntity
+import com.alpha2048.jetpackcomposetest.entity.OwnerEntity
+import com.alpha2048.jetpackcomposetest.entity.RepositoryEntity
 
 @Composable
 fun RepositoryCard (

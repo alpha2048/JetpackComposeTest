@@ -1,4 +1,4 @@
-package com.alpha2048.jetpackcomposetest.domain.entity
+package com.alpha2048.jetpackcomposetest.entity
 
 data class SearchRepositoryEntity (
     val totalCount: Int,

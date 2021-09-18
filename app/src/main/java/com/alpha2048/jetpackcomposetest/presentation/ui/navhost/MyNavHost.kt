@@ -1,7 +1,7 @@
 package com.alpha2048.jetpackcomposetest.presentation.ui.navhost
 
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.alpha2048.jetpackcomposetest.domain.entity.RepositoryEntity
+import com.alpha2048.jetpackcomposetest.entity.RepositoryEntity
 import com.alpha2048.jetpackcomposetest.presentation.ui.screen.HomeScreen
 import com.alpha2048.jetpackcomposetest.presentation.viewmodel.HomeScreenViewModel
 import androidx.compose.runtime.Composable
@@ -54,7 +54,8 @@ fun MyNavHost(
 
 class MainActions(navController: NavHostController) {
     val navigateToRepositoryDetail: (RepositoryEntity) -> Unit = { entity ->
-        val repositoryJson = Moshi.Builder().add(KotlinJsonAdapterFactory()).build().adapter(RepositoryEntity::class.java).toJson(entity)
+        val repositoryJson = Moshi.Builder().add(KotlinJsonAdapterFactory()).build().adapter(
+            RepositoryEntity::class.java).toJson(entity)
         navController.navigate(MainDestinations.REPOSITORY_DETAIL_ROUTE + "/?repository=" + repositoryJson)
     }
     val upPress: () -> Unit = {

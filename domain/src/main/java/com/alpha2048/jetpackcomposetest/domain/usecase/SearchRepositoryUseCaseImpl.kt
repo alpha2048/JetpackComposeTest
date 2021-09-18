@@ -1,6 +1,6 @@
 package com.alpha2048.jetpackcomposetest.domain.usecase
 
-import com.alpha2048.jetpackcomposetest.domain.entity.SearchRepositoryEntity
+import com.alpha2048.jetpackcomposetest.entity.SearchRepositoryEntity
 import com.alpha2048.jetpackcomposetest.domain.repository.SearchRepository
 import com.alpha2048.jetpackcomposetest.presentation.usecase.SearchRepositoryUseCase
 import com.alpha2048.jetpackcomposetest.presentation.usecase.SearchRepositoryUseCaseParam

@@ -8,7 +8,7 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.*
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.viewinterop.AndroidView
-import com.alpha2048.jetpackcomposetest.domain.entity.RepositoryEntity
+import com.alpha2048.jetpackcomposetest.entity.RepositoryEntity
 
 @Composable
 fun RepositoryDetailScreen(
