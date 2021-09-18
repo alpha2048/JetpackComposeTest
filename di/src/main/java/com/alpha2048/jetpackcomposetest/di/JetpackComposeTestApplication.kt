@@ -1,4 +1,4 @@
-package com.alpha2048.jetpackcomposetest
+package com.alpha2048.jetpackcomposetest.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

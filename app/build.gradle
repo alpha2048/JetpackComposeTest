@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
@@ -10,7 +10,6 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.alpha2048.jetpackcomposetest"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -45,9 +44,6 @@ android {
 }
 
 dependencies {
-
-    //implementation project(':data')
-
     // core
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
