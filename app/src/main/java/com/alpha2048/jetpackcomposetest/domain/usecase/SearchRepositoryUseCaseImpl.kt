@@ -10,5 +10,5 @@ class SearchRepositoryUseCaseImpl @Inject constructor(private val repository: Se
     SearchRepositoryUseCase() {
 
     override suspend fun buildExecutable(param: SearchRepositoryUseCaseParam): SearchRepositoryEntity =
-        SearchRepositoryEntity(repository.search(param.q, param.page))
+        repository.search(param.q, param.page)
 }
