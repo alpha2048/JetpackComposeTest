@@ -2,7 +2,7 @@ package com.alpha2048.jetpackcomposetest.viewmodel
 
 import androidx.lifecycle.*
 import com.alpha2048.jetpackcomposetest.entity.RepositoryEntity
-import com.alpha2048.jetpackcomposetest.usecase.base.UseCaseResult
+import com.alpha2048.jetpackcomposetest.common.usecase.base.UseCaseResult
 import com.alpha2048.jetpackcomposetest.usecase.SearchRepositoryUseCase
 import com.alpha2048.jetpackcomposetest.usecase.SearchRepositoryUseCaseParam
 import dagger.hilt.android.lifecycle.HiltViewModel

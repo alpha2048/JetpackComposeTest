@@ -1,7 +1,7 @@
 package com.alpha2048.jetpackcomposetest.usecase
 
 import com.alpha2048.jetpackcomposetest.entity.SearchRepositoryEntity
-import com.alpha2048.jetpackcomposetest.usecase.base.UseCaseInterface
+import com.alpha2048.jetpackcomposetest.common.usecase.base.UseCaseInterface
 
 abstract class SearchRepositoryUseCase: UseCaseInterface<SearchRepositoryUseCaseParam, SearchRepositoryEntity>()
 

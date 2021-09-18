@@ -11,10 +11,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/di-runner" />
             <option value="$PROJECT_DIR$/domain" />
-            <option value="$PROJECT_DIR$/entity" />
             <option value="$PROJECT_DIR$/ui-feature" />
           </set>
         </option>

@@ -1,4 +1,4 @@
-package com.alpha2048.jetpackcomposetest.entity
+package com.alpha2048.jetpackcomposetest.common
 
 import org.junit.Test
 
