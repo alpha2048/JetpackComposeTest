@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "JetpackComposeTest"
 include ':app'
+include ':data'
+include ':di'
