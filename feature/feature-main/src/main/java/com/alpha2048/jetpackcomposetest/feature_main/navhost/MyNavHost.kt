@@ -1,9 +1,10 @@
 package com.alpha2048.jetpackcomposetest.feature_main.navhost
 
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.alpha2048.jetpackcomposetest.common.entity.RepositoryEntity
 import com.alpha2048.jetpackcomposetest.feature_main.screen.HomeScreen
 import com.alpha2048.jetpackcomposetest.feature_main.viewmodel.HomeScreenViewModel
+import com.alpha2048.jetpackcomposetest.feature_main.screen.RepositoryDetailScreen
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
@@ -12,7 +13,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.alpha2048.jetpackcomposetest.feature_main.screen.RepositoryDetailScreen
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
