@@ -15,7 +15,9 @@
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/di-runner" />
             <option value="$PROJECT_DIR$/domain" />
-            <option value="$PROJECT_DIR$/ui-feature" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/feature-main" />
+            <option value="$PROJECT_DIR$/ui-component" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

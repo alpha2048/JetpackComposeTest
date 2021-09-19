@@ -1,8 +1,8 @@
 package com.alpha2048.jetpackcomposetest.data.model
 
-import com.alpha2048.jetpackcomposetest.entity.OwnerEntity
-import com.alpha2048.jetpackcomposetest.entity.RepositoryEntity
-import com.alpha2048.jetpackcomposetest.entity.SearchRepositoryEntity
+import com.alpha2048.jetpackcomposetest.common.entity.OwnerEntity
+import com.alpha2048.jetpackcomposetest.common.entity.RepositoryEntity
+import com.alpha2048.jetpackcomposetest.common.entity.SearchRepositoryEntity
 
 data class SearchRepositoryResponse (
     val total_count: Int,

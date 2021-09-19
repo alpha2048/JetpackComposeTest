@@ -1,7 +1,7 @@
 package com.alpha2048.jetpackcomposetest.data.repository
 
 import com.alpha2048.jetpackcomposetest.data.api.GithubApiInterface
-import com.alpha2048.jetpackcomposetest.entity.SearchRepositoryEntity
+import com.alpha2048.jetpackcomposetest.common.entity.SearchRepositoryEntity
 import com.alpha2048.jetpackcomposetest.domain.repository.SearchRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

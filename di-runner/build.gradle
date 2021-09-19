@@ -37,7 +37,7 @@ dependencies {
     implementation project(':data')
     implementation project(':domain')
     implementation project(':common')
-    implementation project(':ui-feature')
+    implementation project(':feature:feature-main')
 
     implementation "androidx.core:core-ktx:${versions.core}"
     implementation "com.google.android.material:material:${versions.material}"

@@ -4,7 +4,7 @@ import com.alpha2048.jetpackcomposetest.data.api.GithubApiInterface
 import com.alpha2048.jetpackcomposetest.data.repository.SearchRepositoryImpl
 import com.alpha2048.jetpackcomposetest.domain.repository.SearchRepository
 import com.alpha2048.jetpackcomposetest.domain.usecase.SearchRepositoryUseCaseImpl
-import com.alpha2048.jetpackcomposetest.usecase.SearchRepositoryUseCase
+import com.alpha2048.jetpackcomposetest.feature_main.usecase.SearchRepositoryUseCase
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Binds
