@@ -1,7 +1,0 @@
-<resources>
-    <!-- 実際のスタイルはpresentation/ui/resource/Themaにある -->
-    <style name="Theme.JetpackComposeTest" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- ステータスバーの色だけ変える -->
-        <item name="android:statusBarColor">#8e8e8e</item>
-    </style>
-</resources>

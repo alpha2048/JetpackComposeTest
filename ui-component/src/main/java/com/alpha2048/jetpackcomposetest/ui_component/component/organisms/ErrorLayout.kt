@@ -9,7 +9,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.alpha2048.jetpackcomposetest.ui_component.R
 
 @Composable
 fun ErrorLayout (
@@ -22,10 +24,13 @@ fun ErrorLayout (
             .wrapContentSize(Alignment.Center),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(text = "エラーが発生しました",modifier = Modifier.padding(8.dp))
-        Text(text = "エラー内容: " + e.message ,modifier = Modifier.padding(start = 8.dp, end = 8.dp, bottom = 8.dp))
+        Text(text = stringResource(id = R.string.error_text), modifier = Modifier.padding(8.dp))
+        Text(
+            text = stringResource(id = R.string.error_text_description) + e.message,
+            modifier = Modifier.padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
+        )
         Button(onClick = onClickRetry) {
-            Text(text = "再実行")
+            Text(text = stringResource(id = R.string.retry))
         }
     }
 }

@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -22,6 +23,8 @@ import com.alpha2048.jetpackcomposetest.ui_component.component.parts.RepositoryC
 import com.alpha2048.jetpackcomposetest.ui_component.resource.MyThema
 import com.alpha2048.jetpackcomposetest.ui_component.util.OnBottomReached
 import com.alpha2048.jetpackcomposetest.feature_main.viewmodel.HomeScreenViewModel
+import com.alpha2048.jetpackcomposetest.feature_main.R
+import com.alpha2048.jetpackcomposetest.common.R as commonResource
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
@@ -72,7 +75,7 @@ fun HomeScreen(
                                 )
                             },
                             label = {
-                                Text(text = "検索ワードを入れてね")
+                                Text(text = stringResource(id = R.string.search_bar_label))
                             },
                             value = text,
                             onValueChange = {
@@ -83,7 +86,7 @@ fun HomeScreen(
                         )
                         Spacer(modifier = Modifier.width(8.dp))
                         Button(onClick = { onSearch(text) }) {
-                            Text(text = "決定")
+                            Text(text = stringResource(id = commonResource.string.decide))
                         }
                     }
                 },

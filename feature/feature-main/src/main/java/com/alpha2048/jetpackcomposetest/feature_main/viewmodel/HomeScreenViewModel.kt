@@ -54,7 +54,7 @@ class HomeScreenViewModel @Inject constructor(
                         it.copy(
                             state = UiState.Loaded,
                             items = it.items + result.data.items,
-                            // 呼びすぎると403になるので3ページで止める
+                            // 連続で呼びすぎると403になるので3ページで止める
                             isComplete = result.data.items.isEmpty() || page >= 3
                         )
                     }
