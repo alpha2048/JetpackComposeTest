@@ -3,7 +3,6 @@
     package="com.alpha2048.jetpackcomposetest">
 
     <application
-        android:allowBackup="true"
         android:name=".JetpackComposeTestApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
