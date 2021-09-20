@@ -5,6 +5,7 @@
 This includes
 
 - Jetpack Compose
+- Multi Module
 - Github search API
 - Clean Architecture
 - Hilt
