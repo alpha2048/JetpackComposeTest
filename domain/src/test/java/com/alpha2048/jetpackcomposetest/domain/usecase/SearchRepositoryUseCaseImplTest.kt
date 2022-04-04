@@ -51,6 +51,8 @@ class SearchRepositoryUseCaseImplTest {
         coEvery { search(q = query, page = page) } throws Exception("エラーテスト")
     }
 
+    //TODO: use runTest if experimental is removed
+
     @Test
     fun `正常系のチェック`() = runBlocking {
         val useCase = SearchRepositoryUseCaseImpl(mockRepository)
