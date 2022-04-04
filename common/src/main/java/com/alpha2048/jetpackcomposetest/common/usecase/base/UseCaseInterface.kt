@@ -1,11 +1,13 @@
 package com.alpha2048.jetpackcomposetest.common.usecase.base
 
+import java.lang.Exception
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.lang.Exception
 
-abstract class UseCaseInterface<in T, out E>(private val dispatcher: CoroutineDispatcher = Dispatchers.IO) {
+abstract class UseCaseInterface<in T, out E>(
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
+) {
 
     protected abstract suspend fun buildExecutable(param: T): E
 

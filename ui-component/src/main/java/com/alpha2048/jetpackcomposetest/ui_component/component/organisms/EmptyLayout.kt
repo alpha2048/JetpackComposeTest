@@ -12,8 +12,7 @@ import androidx.compose.ui.text.style.TextAlign
 import com.alpha2048.jetpackcomposetest.ui_component.R
 
 @Composable
-fun EmptyLayout(
-) {
+fun EmptyLayout() {
     Box(
         modifier = Modifier
             .fillMaxSize()

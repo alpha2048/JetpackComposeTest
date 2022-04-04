@@ -29,7 +29,7 @@ fun RepositoryDetailScreen(
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick =  onBackPress ) {
+                    IconButton(onClick = onBackPress) {
                         Icon(Icons.Default.Close, contentDescription = "")
                     }
                 }

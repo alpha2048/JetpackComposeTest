@@ -19,7 +19,7 @@ import com.alpha2048.jetpackcomposetest.common.entity.OwnerEntity
 import com.alpha2048.jetpackcomposetest.common.entity.RepositoryEntity
 
 @Composable
-fun RepositoryCard (
+fun RepositoryCard(
     repository: RepositoryEntity,
     onClick: (RepositoryEntity) -> Unit,
 ) {
@@ -65,7 +65,6 @@ fun RepositoryCard (
                     overflow = TextOverflow.Ellipsis,
                 )
             }
-
         }
     }
 }

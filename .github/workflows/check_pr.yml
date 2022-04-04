@@ -1,0 +1,50 @@
+name: check pr
+on:
+  pull_request:
+    branches:
+      - 'master'
+      - 'develop'
+      - 'feature/**'
+      - 'release/**'
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          cache: gradle
+#      - name: Grant execute permission for gradlew
+#        run: chmod +x gradlew
+#      - name: Build with Gradle
+#        run: ./gradlew build
+  check:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+          bundler-cache: true
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug
+      - name: run UnitTest
+        continue-on-error: true
+        run: ./gradlew testDebugUnitTest
+      - name: run androidLint
+        run: ./gradlew lintDebug
+      - name: run ktlintCheck
+        run: ./gradlew --no-daemon ktlintCheck
+      - name: run danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gem install bundler
+          bundle update
+          bundle install
+          bundle exec danger

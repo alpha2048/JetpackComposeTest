@@ -6,20 +6,20 @@ import com.alpha2048.jetpackcomposetest.common.usecase.base.UseCaseResult
 import com.alpha2048.jetpackcomposetest.feature_main.usecase.SearchRepositoryUseCase
 import com.alpha2048.jetpackcomposetest.feature_main.usecase.SearchRepositoryUseCaseParam
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
     private val useCase: SearchRepositoryUseCase
 ) : ViewModel() {
 
-    sealed class UiState(val value: Int){
-        object Loading: UiState(0)
-        object Loaded: UiState(1)
-        data class Error(val e: Exception): UiState(2)
+    sealed class UiState(val value: Int) {
+        object Loading : UiState(0)
+        object Loaded : UiState(1)
+        data class Error(val e: Exception) : UiState(2)
     }
 
     data class HomeUiState(
@@ -48,7 +48,7 @@ class HomeScreenViewModel @Inject constructor(
 
     private fun fetch() {
         fetchJob = viewModelScope.launch {
-            when(val result = useCase.execute(SearchRepositoryUseCaseParam(searchWord, page))) {
+            when (val result = useCase.execute(SearchRepositoryUseCaseParam(searchWord, page))) {
                 is UseCaseResult.Success -> {
                     _uiState.update {
                         it.copy(

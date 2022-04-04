@@ -12,16 +12,15 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 @Module(includes = [ApiModule::class])
 @InstallIn(SingletonComponent::class)
 abstract class AppModule {
-
 
     // ----------------- repository -----------------
 
@@ -64,4 +63,3 @@ internal object ApiModule {
         return retrofit.create(GithubApiInterface::class.java)
     }
 }
-

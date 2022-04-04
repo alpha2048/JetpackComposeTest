@@ -1,18 +1,18 @@
 package com.alpha2048.jetpackcomposetest.feature_main.navhost
 
-import com.alpha2048.jetpackcomposetest.common.entity.RepositoryEntity
-import com.alpha2048.jetpackcomposetest.feature_main.screen.HomeScreen
-import com.alpha2048.jetpackcomposetest.feature_main.viewmodel.HomeScreenViewModel
-import com.alpha2048.jetpackcomposetest.feature_main.screen.RepositoryDetailScreen
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.alpha2048.jetpackcomposetest.common.entity.RepositoryEntity
+import com.alpha2048.jetpackcomposetest.feature_main.screen.HomeScreen
+import com.alpha2048.jetpackcomposetest.feature_main.screen.RepositoryDetailScreen
+import com.alpha2048.jetpackcomposetest.feature_main.viewmodel.HomeScreenViewModel
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
@@ -58,7 +58,8 @@ fun MyNavHost(
 class MainActions(navController: NavHostController) {
     val navigateToRepositoryDetail: (RepositoryEntity) -> Unit = { entity ->
         val repositoryJson = Moshi.Builder().add(KotlinJsonAdapterFactory()).build().adapter(
-            RepositoryEntity::class.java).toJson(entity)
+            RepositoryEntity::class.java
+        ).toJson(entity)
         navController.navigate(MainDestinations.REPOSITORY_DETAIL_ROUTE + "/?repository=" + repositoryJson)
     }
     val upPress: () -> Unit = {
