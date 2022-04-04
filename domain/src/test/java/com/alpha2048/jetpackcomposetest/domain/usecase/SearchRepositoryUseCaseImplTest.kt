@@ -65,7 +65,7 @@ class SearchRepositoryUseCaseImplTest {
 
         assertThat(entity).isInstanceOf(SearchRepositoryEntity::class.java)
         assertThat(entity.items).hasSize(2)
-        assertThat(entity.items.first().id).isEqualTo(1)
+        assertThat(entity.items.first().id).isEqualTo(99)
 
         coVerify { mockRepository.search(q = query, page = page) }
     }
