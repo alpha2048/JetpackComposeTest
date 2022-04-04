@@ -14,4 +14,6 @@
 .cxx
 local.properties
 
+# ref: https://betterprogramming.pub/exploring-the-idea-folder-790931c19191
 /.idea/misc.xml
+/.idea/deploymentTargetDropDown.xml
