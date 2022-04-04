@@ -4,7 +4,7 @@ import com.alpha2048.jetpackcomposetest.common.entity.OwnerEntity
 import com.alpha2048.jetpackcomposetest.common.entity.RepositoryEntity
 import com.alpha2048.jetpackcomposetest.common.entity.SearchRepositoryEntity
 
-data class SearchRepositoryResponse (
+data class SearchRepositoryResponse(
     val total_count: Int,
     val incomplete_results: Boolean,
     val items: List<RepositoryResponse>,
@@ -16,7 +16,7 @@ data class SearchRepositoryResponse (
     )
 }
 
-data class RepositoryResponse (
+data class RepositoryResponse(
     val id: Int,
     val name: String,
     val html_url: String,

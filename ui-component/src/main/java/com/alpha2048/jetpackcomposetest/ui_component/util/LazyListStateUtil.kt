@@ -7,19 +7,18 @@ import kotlinx.coroutines.flow.collect
 // 参考元:  https://manavtamboli.medium.com/infinite-list-paged-list-in-jetpack-compose-b10fc7e74768
 @Composable
 fun LazyListState.OnBottomReached(
-    onLoadMore : () -> Unit
+    onLoadMore: () -> Unit
 ) {
     val shouldLoadMore = remember {
         derivedStateOf {
             val lastVisibleItem = layoutInfo.visibleItemsInfo.lastOrNull()
-                ?:
-                return@derivedStateOf true
+                ?: return@derivedStateOf true
 
-            lastVisibleItem.index >=  layoutInfo.totalItemsCount - 3
+            lastVisibleItem.index >= layoutInfo.totalItemsCount - 3
         }
     }
 
-    LaunchedEffect(shouldLoadMore){
+    LaunchedEffect(shouldLoadMore) {
         snapshotFlow { shouldLoadMore.value }
             .collect { if (it) onLoadMore() }
     }

@@ -1,12 +1,12 @@
 package com.alpha2048.jetpackcomposetest.common.entity
 
-data class SearchRepositoryEntity (
+data class SearchRepositoryEntity(
     val totalCount: Int,
     val incompleteResults: Boolean,
     val items: List<RepositoryEntity>
 )
 
-data class RepositoryEntity (
+data class RepositoryEntity(
     val id: Int,
     val name: String,
     val htmlUrl: String,
@@ -14,7 +14,7 @@ data class RepositoryEntity (
     val owner: OwnerEntity,
 )
 
-data class OwnerEntity (
+data class OwnerEntity(
     val id: Int,
     val avatarUrl: String,
 )

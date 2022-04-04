@@ -14,10 +14,10 @@ import androidx.compose.ui.unit.dp
 import com.alpha2048.jetpackcomposetest.ui_component.R
 
 @Composable
-fun ErrorLayout (
+fun ErrorLayout(
     e: Exception,
     onClickRetry: () -> Unit,
-){
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()

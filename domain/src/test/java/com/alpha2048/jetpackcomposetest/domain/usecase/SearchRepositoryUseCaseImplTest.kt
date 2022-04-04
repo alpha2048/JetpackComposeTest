@@ -20,38 +20,39 @@ class SearchRepositoryUseCaseImplTest {
 
     private val mockRepository = mockk<SearchRepository> {
         coEvery { search(q = query, page = page) } returns
-                SearchRepositoryEntity(
-                    totalCount = 2,
-                    incompleteResults = true,
-                    items = listOf(
-                        RepositoryEntity(
-                            id = 1,
-                            name = "1個目",
-                            htmlUrl = "https://placehold.jp/150x150.png",
-                            stargazersCount = 111,
-                            owner = OwnerEntity(
-                                id = 11,
-                                avatarUrl = "https://placehold.jp/150x150.png"
-                            )
-                        ), RepositoryEntity(
-                            id = 2,
-                            name = "2個目",
-                            htmlUrl = "https://placehold.jp/150x150.png",
-                            stargazersCount = 222,
-                            owner = OwnerEntity(
-                                id = 12,
-                                avatarUrl = "https://placehold.jp/150x150.png"
-                            )
+            SearchRepositoryEntity(
+                totalCount = 2,
+                incompleteResults = true,
+                items = listOf(
+                    RepositoryEntity(
+                        id = 1,
+                        name = "1個目",
+                        htmlUrl = "https://placehold.jp/150x150.png",
+                        stargazersCount = 111,
+                        owner = OwnerEntity(
+                            id = 11,
+                            avatarUrl = "https://placehold.jp/150x150.png"
+                        )
+                    ),
+                    RepositoryEntity(
+                        id = 2,
+                        name = "2個目",
+                        htmlUrl = "https://placehold.jp/150x150.png",
+                        stargazersCount = 222,
+                        owner = OwnerEntity(
+                            id = 12,
+                            avatarUrl = "https://placehold.jp/150x150.png"
                         )
                     )
                 )
+            )
     }
 
     private val errorRepository = mockk<SearchRepository> {
         coEvery { search(q = query, page = page) } throws Exception("エラーテスト")
     }
 
-    //TODO: use runTest if experimental is removed
+    // TODO: use runTest if experimental is removed
 
     @Test
     fun `正常系のチェック`() = runBlocking {

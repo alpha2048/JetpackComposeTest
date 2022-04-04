@@ -9,8 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun LoadingLayout(
-) {
+fun LoadingLayout() {
     Box(
         modifier = Modifier
             .fillMaxSize()

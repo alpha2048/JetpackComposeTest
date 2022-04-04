@@ -14,17 +14,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.alpha2048.jetpackcomposetest.common.R as commonResource
 import com.alpha2048.jetpackcomposetest.common.entity.OwnerEntity
 import com.alpha2048.jetpackcomposetest.common.entity.RepositoryEntity
+import com.alpha2048.jetpackcomposetest.feature_main.R
+import com.alpha2048.jetpackcomposetest.feature_main.viewmodel.HomeScreenViewModel
 import com.alpha2048.jetpackcomposetest.ui_component.component.organisms.EmptyLayout
 import com.alpha2048.jetpackcomposetest.ui_component.component.organisms.ErrorLayout
 import com.alpha2048.jetpackcomposetest.ui_component.component.organisms.LoadingLayout
 import com.alpha2048.jetpackcomposetest.ui_component.component.parts.RepositoryCard
 import com.alpha2048.jetpackcomposetest.ui_component.resource.MyThema
 import com.alpha2048.jetpackcomposetest.ui_component.util.OnBottomReached
-import com.alpha2048.jetpackcomposetest.feature_main.viewmodel.HomeScreenViewModel
-import com.alpha2048.jetpackcomposetest.feature_main.R
-import com.alpha2048.jetpackcomposetest.common.R as commonResource
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
@@ -117,10 +117,12 @@ fun HomeScreen(
                                 }
                                 if (!uiState.isComplete) {
                                     item {
-                                        Box(modifier = Modifier
-                                            .fillMaxWidth()
-                                            .padding(8.dp)
-                                            .wrapContentSize(Alignment.Center)) {
+                                        Box(
+                                            modifier = Modifier
+                                                .fillMaxWidth()
+                                                .padding(8.dp)
+                                                .wrapContentSize(Alignment.Center)
+                                        ) {
                                             CircularProgressIndicator()
                                         }
                                     }
