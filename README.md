@@ -10,6 +10,7 @@ This includes
 - Clean Architecture
 - Hilt
 - Coil
+- GitHub Actions
 
 ## description
 
