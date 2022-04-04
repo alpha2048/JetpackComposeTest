@@ -60,10 +60,12 @@ subprojects {
 
     // Optionally configure plugin
     ktlint {
+        android = true
         debug = true
         reporters {
             reporter "checkstyle"
         }
+        ignoreFailures = true
     }
 }
 

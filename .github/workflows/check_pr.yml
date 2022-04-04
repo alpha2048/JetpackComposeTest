@@ -30,14 +30,13 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.7'
-          architecture: 'x64'
       - name: Build with Gradle
         run: ./gradlew assembleDebug
-      - name: Unit Test
+      - name: run UnitTest
         run: ./gradlew testDebugUnitTest
-      - name: run andoidLint
+      - name: run androidLint
         run: ./gradlew lintDebug
-      - name: Run ktlintCheck
+      - name: run ktlintCheck
         run: ./gradlew --no-daemon ktlintCheck
       - name: run danger
         env:
