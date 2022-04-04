@@ -43,7 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gem install bundler:1.17.2
+          gem install bundler
           bundle update
           bundle install
           bundle exec danger

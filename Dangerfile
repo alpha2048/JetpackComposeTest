@@ -5,7 +5,7 @@ Dir["**/reports/ktlint/ktlintMainSourceSetCheck/ktlintMainSourceSetCheck.xml"].e
 end
 
 # android lint
-android_lint.skip_gradle_task = true
+android_lint.skip_gradle_task = true # 事前にビルド実行する
 android_lint.filtering = true
 Dir["*/build/reports/lint-results*.xml"].each do |file|
   android_lint.report_file = file
