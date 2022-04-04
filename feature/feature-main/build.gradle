@@ -51,9 +51,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:${versions.lifecycle}"
     // プロセスキル復元するなら
     //implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:${versions.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0-beta01"
 
     // compose
     implementation "androidx.compose.runtime:runtime:${versions.compose}"
@@ -67,9 +67,9 @@ dependencies {
     implementation "androidx.compose.material:material:${versions.compose}"
     implementation "androidx.compose.material:material-icons-extended:${versions.compose}"
     implementation "androidx.activity:activity-compose:${versions.activity}"
-    implementation 'androidx.navigation:navigation-compose:2.4.0-alpha09'
-    implementation 'androidx.navigation:navigation-common:2.4.0-alpha09'
-    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-alpha03'
+    implementation "androidx.navigation:navigation-compose:${versions.navigation}"
+    implementation "androidx.navigation:navigation-common:${versions.navigation}"
+    implementation "androidx.hilt:hilt-navigation-compose:${versions.hilt_androidx}"
     debugImplementation "androidx.compose.ui:ui-test-manifest:${versions.compose}"
 
     // compose support
