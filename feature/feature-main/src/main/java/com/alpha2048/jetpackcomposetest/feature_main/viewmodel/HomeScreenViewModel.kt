@@ -81,7 +81,7 @@ class HomeScreenViewModel @Inject constructor(
     }
 
     fun reload() {
-        page = 0
+        page = 1
         _uiState.update {
             HomeUiState(state = UiState.Loading, items = listOf(), isComplete = false)
         }
