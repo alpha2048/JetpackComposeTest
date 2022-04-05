@@ -13,7 +13,6 @@ import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.After
@@ -34,59 +33,58 @@ class HomeScreenViewModelTest {
 
     private val mockUseCase = mockk<SearchRepositoryUseCase> {
         coEvery { execute(param) } returns
-                UseCaseResult.Success(
-                    data = SearchRepositoryEntity(
-                        totalCount = 2,
-                        incompleteResults = true,
-                        items = listOf(
-                            RepositoryEntity(
-                                id = 1,
-                                name = "1個目",
-                                htmlUrl = "https://placehold.jp/150x150.png",
-                                stargazersCount = 111,
-                                owner = OwnerEntity(
-                                    id = 11,
-                                    avatarUrl = "https://placehold.jp/150x150.png"
-                                )
-                            ),
-                            RepositoryEntity(
-                                id = 2,
-                                name = "2個目",
-                                htmlUrl = "https://placehold.jp/150x150.png",
-                                stargazersCount = 222,
-                                owner = OwnerEntity(
-                                    id = 12,
-                                    avatarUrl = "https://placehold.jp/150x150.png"
-                                )
+            UseCaseResult.Success(
+                data = SearchRepositoryEntity(
+                    totalCount = 2,
+                    incompleteResults = true,
+                    items = listOf(
+                        RepositoryEntity(
+                            id = 1,
+                            name = "1個目",
+                            htmlUrl = "https://placehold.jp/150x150.png",
+                            stargazersCount = 111,
+                            owner = OwnerEntity(
+                                id = 11,
+                                avatarUrl = "https://placehold.jp/150x150.png"
+                            )
+                        ),
+                        RepositoryEntity(
+                            id = 2,
+                            name = "2個目",
+                            htmlUrl = "https://placehold.jp/150x150.png",
+                            stargazersCount = 222,
+                            owner = OwnerEntity(
+                                id = 12,
+                                avatarUrl = "https://placehold.jp/150x150.png"
                             )
                         )
                     )
                 )
+            )
         coEvery { execute(defaultParam) } returns
-                UseCaseResult.Success(
-                    data = SearchRepositoryEntity(
-                        totalCount = 0,
-                        incompleteResults = false,
-                        items = listOf()
-                    )
+            UseCaseResult.Success(
+                data = SearchRepositoryEntity(
+                    totalCount = 0,
+                    incompleteResults = false,
+                    items = listOf()
                 )
+            )
     }
 
     private val errorUseCase = mockk<SearchRepositoryUseCase> {
         coEvery { execute(param) } returns
-                UseCaseResult.Failure(
-                    e = Exception("エラーテスト")
-                )
+            UseCaseResult.Failure(
+                e = Exception("エラーテスト")
+            )
         coEvery { execute(defaultParam) } returns
-                UseCaseResult.Success(
-                    data = SearchRepositoryEntity(
-                        totalCount = 0,
-                        incompleteResults = false,
-                        items = listOf()
-                    )
+            UseCaseResult.Success(
+                data = SearchRepositoryEntity(
+                    totalCount = 0,
+                    incompleteResults = false,
+                    items = listOf()
                 )
+            )
     }
-
 
     // https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-test/
     @OptIn(DelicateCoroutinesApi::class)
