@@ -11,6 +11,11 @@ This includes
 - Hilt
 - Coil
 - GitHub Actions
+- Danger
+- ktlint
+- MockK (test)
+- Truth (test)
+- Turbine (test)
 
 ## description
 
