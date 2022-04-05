@@ -97,6 +97,8 @@ dependencies {
     testImplementation "junit:junit:${versions.junit}"
     testImplementation "io.mockk:mockk:${versions.mockk}"
     testImplementation "com.google.truth:truth:${versions.truth}"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}"
+    testImplementation "app.cash.turbine:turbine:${versions.turbine}"
     androidTestImplementation "androidx.test.ext:junit:${versions.junitandroid}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 }
